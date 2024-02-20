@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class TankMovement : MonoBehaviour
+public class MoveForward : MonoBehaviour
 {
-    public float speed = 50;
+    public float shell_speed = 7;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,8 @@ public class TankMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(0,speed ,0)* Time.deltaTime);
+        float h = 1;
+        transform.Translate(new Vector3(0,h,0)*shell_speed*Time.deltaTime);
+
     }
 }
