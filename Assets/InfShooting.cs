@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class InfShooting : MonoBehaviour
 {
-    public Transform shell_pos;
-    public GameObject shell;
-    public float shell_frequency = .1f;
+    public Transform bullet_pos;
+    public GameObject bullet;
+    public float bullet_frequency = .1f;
     private float c_time;
+    public bool can_shoot;
 
     void Start()
     {
@@ -16,17 +17,18 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (c_time < shell_frequency)
+        if (c_time < bullet_frequency)
         {
             c_time += Time.deltaTime;
         }
         else
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (can_shoot)
             {
-                GameObject new_shell = Instantiate(shell, shell_pos.position, shell_pos.rotation);
+                GameObject new_bullet= Instantiate(bullet, bullet_pos.position, bullet_pos.rotation);
 
                 c_time = 0;
+            }
             }
         }
     }
