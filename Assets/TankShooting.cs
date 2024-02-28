@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InfShooting : MonoBehaviour
+public class TankShooting : MonoBehaviour
 {
     public Transform bullet_pos;
     public GameObject bullet;
@@ -22,7 +22,7 @@ public class InfShooting : MonoBehaviour
         {
             if (can_shoot)
             {
-                GameObject new_bullet= Instantiate(bullet, bullet_pos.position, bullet_pos.rotation);
+                GameObject new_bullet = Instantiate(bullet, bullet_pos.position, bullet_pos.rotation);
 
                 c_time = 0;
             }
